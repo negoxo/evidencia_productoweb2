@@ -4,20 +4,27 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section className="columna1">
+        <form>
+          <label>Municipios del valle de aburra</label>
+          <select>
+            <option>Medellin</option>
+            <option>Envigado</option>
+            <option>Sabaneta</option>
+            <option>Caldas</option>
+            <option>La Estrella</option>
+            <option>Girardota</option>
+            <option>Copacabana</option>
+            <option>Barbosa</option>
+            <option>Bello</option>
+            <option>Itagui</option>
+          </select>
+        </form>
+      </section>
+      <section className="columna2">
+
+      </section>
+      
     </div>
   );
 }
