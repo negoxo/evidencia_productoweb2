@@ -5,6 +5,29 @@ import Img from './Img/valle-de-aburra-1.jpg';
 import './App.css';
 
 function App() {
+  const [weather, setWeather] = useState(null);
+  const [city, setCity] = useState('Medellin');
+
+  useEffect(() => {
+    const fetchWeather = async () => {
+      try {
+        const apiKey = '9e7e29464ca934303c3571d09caf8f58';
+        const response = await axios.get(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+        );
+        setWeather(response.data);
+      } catch (error) {
+        console.error("Error fetching weather data", error);
+      }
+    };
+
+    fetchWeather();
+  }, [city]);
+
+  const handleCityChange = (event) => {
+    setCity(event.target.value);
+  };
+
   return (
     <div 
       className="App App-background"
@@ -15,8 +38,8 @@ function App() {
         <form>
           <label>Municipios del valle de aburra</label>
           <br /><br />
-          <select>
-            <option>Medellín</option>
+          <select onChange={handleCityChange} value={city}>
+            <option>Medellin</option>
             <option>Envigado</option>
             <option>Sabaneta</option>
             <option>Caldas</option>
@@ -25,20 +48,20 @@ function App() {
             <option>Copacabana</option>
             <option>Barbosa</option>
             <option>Bello</option>
-            <option>Itagüí</option>
+            <option>Itagui</option>
           </select>
         </form>
       </section>
       <br />
-      <section className="columna2">
-        <form>
-          <label>Fecha que desea consultar</label>
-          <br /><br />
-          <select>
-            <option>Actual</option>
-          </select>
-        </form>
-      </section>
+      
+      {weather && (
+        <div className="weather-info">
+          <h2>{weather.name}</h2>
+          <p>Temperatura: {weather.main.temp}°C</p>
+          <p>Humedad: {weather.main.humidity}%</p>
+          <p>Condición: {weather.weather[0].description}</p>
+        </div>
+      )}
     </div>
   );
 }
