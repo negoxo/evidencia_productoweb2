@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Img from './Img/valle-de-aburra-1.jpg';
 import './App.css';
+import MapComponent from './Maps';
 
 function App() {
   const [weather, setWeather] = useState(null);
@@ -33,10 +33,13 @@ function App() {
       className="App App-background"
       style={{ backgroundImage: `url(${Img})` }} /* Establecer la imagen de fondo */
     >
-      <h1 className="title">El Clima en el Valle de Aburrá</h1>
+      <h1 className="title">VAMOS EN BICI</h1>
+      <section className="columna2">
+        <MapComponent />
+      </section>
       <section className="columna1">
         <form>
-          <label>Municipios del valle de aburra</label>
+          <label>Clima Municipios del valle de aburra</label>
           <br /><br />
           <select onChange={handleCityChange} value={city}>
             <option>Medellin</option>
@@ -53,7 +56,6 @@ function App() {
         </form>
       </section>
       <br />
-      
       {weather && (
         <div className="weather-info">
           <h2>{weather.name}</h2>

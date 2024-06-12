@@ -42,7 +42,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh; /* Ajusta según tu diseño */
+  /*height: ;  Ajusta según tu diseño */
   display: flex;
   flex-direction: column; /* Añadir dirección de columna */
   justify-content: flex-start; /* Alineación superior */
@@ -52,15 +52,15 @@
 
 .title {
   font-size: 2em;
-  color: white; /* Cambia el color según sea necesario */
+  color: rgb(2, 59, 28); /* Cambia el color según sea necesario */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añadir sombra para mejor legibilidad */
   margin-bottom: 20px; /* Espacio inferior */
 }
 
 .columna1, .columna2 {
-  margin: 20px;
+  margin: 10px;
   background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para mejor legibilidad */
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
 }
 
