@@ -1,17 +1,17 @@
 // src/MapComponent.js
 
 import React, { useState, useCallback } from 'react';
-import { GoogleMap, LoadScript, Marker, DirectionsService, DirectionsRenderer } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker, DirectionsService, DirectionsRenderer, Autocomplete } from '@react-google-maps/api';
 
 
 const containerStyle = {
-  width: '700px',
-  height: '500px'
+  width: '100%',
+  height: '550px'
 };
 
 const center = {
-  lat: -3.745,
-  lng: -38.523
+  lat: 6.25184,
+  lng: -75.56359
 };
 
 const MapComponent = () => {
@@ -43,12 +43,24 @@ const MapComponent = () => {
     }
   };
 
+  <section className="columna2">
+        <input placeholder='Origen'></input>
+        <input placeholder='Destino'></input>
+        <button>Calcula tu ruta</button>
+      </section>
+
   return (
+    <>
+    <section className="columna2">
+        <input placeholder='Origen'></input>
+        <input placeholder='Destino'></input>
+        <button>Calcula tu ruta</button>
+      </section>
     <LoadScript googleMapsApiKey="AIzaSyCNYt-rYifEvAi_HD6l3bCKVovekstsXFw">
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={10}
+        zoom={12.5}
         onClick={onMapClick}
       >
         {origin && <Marker position={origin} />}
@@ -72,6 +84,8 @@ const MapComponent = () => {
         )}
       </GoogleMap>
     </LoadScript>
+    </>      
+
   )
 }
 
