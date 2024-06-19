@@ -12,7 +12,7 @@ function QuienesSomos() {
 
             </div>
             <div className="md:w-1/2 p-5 w-full h-auto rounded-lg shadow-lg">
-                <div className="bg-quienessomos-image w-full h-auto rounded-lg shadow-lg"></div>
+                <div className="bg-quienessomos-image bg-no-repeat w-90 h-64 mt-6 bg-center"></div>
             </div>
         </section>
 

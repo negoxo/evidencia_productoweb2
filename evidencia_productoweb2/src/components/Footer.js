@@ -21,7 +21,7 @@ function Footer() {
               <li><a href="https://x.com/VamosEn57503" target="_blank" className="text-xl"></a><FaXTwitter /></li>
               <li><a href="https://www.instagram.com/vamosenbici3/" target="_blank" className="text-xl"><FaInstagram /></a></li>
               <li><a href="https://whatsapp.com" target="_blank" className="text-xl"><FaWhatsapp /></a></li>
-              <li><a href="https://youtube.com" target="_blank" className="text-xl"><FaYoutube /></a></li>
+              <li><a href="https://www.youtube.com/@EnCiclaSPB" target="_blank" className="text-xl"><FaYoutube /></a></li>
           </ul>
       </nav>
       </footer>

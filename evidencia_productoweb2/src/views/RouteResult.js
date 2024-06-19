@@ -6,19 +6,31 @@ function RouteResult() {
   const location = useLocation();
   const { origin, destination } = location.state || {};
   const [response, setResponse] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const directionsCallback =  (result, status) => {
+  
+
+  const directionsCallback = (result, status) => {
     if (status === 'OK') {
       setResponse(result);
+      setLoading(false);
     } else {
       setError('No se pudo calcular la ruta.');
+      setLoading(false);
     }
   };
 
   useEffect(() => {
     if (!origin || !destination) {
       setError('Origen o destino no proporcionado.');
+    }
+  }, [origin, destination]);
+
+  useEffect(() => {
+    if (origin && destination) {
+      setLoading(true);
+      setResponse(null); // Reset previous response
     }
   }, [origin, destination]);
 
@@ -32,7 +44,7 @@ function RouteResult() {
             center={{ lat: 6.2442, lng: -75.5812 }}
             zoom={12}
           >
-            {origin && destination && (
+            {origin && destination && loading && (
               <DirectionsService
                 options={{
                   destination: destination,
@@ -52,6 +64,7 @@ function RouteResult() {
           </GoogleMap>
         </LoadScript>
       </div>
+      {loading && <p className="text-blue-500 mt-4">Calculando ruta...</p>}
       {response && (
         <div className="mt-4 p-4 bg-white rounded-lg shadow-lg">
           <h2 className="text-2xl font-bold">Detalles de la Ruta</h2>
@@ -64,4 +77,4 @@ function RouteResult() {
   );
 }
 
-export default RouteResult;
+export default RouteResult;

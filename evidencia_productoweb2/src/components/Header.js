@@ -19,7 +19,9 @@ function Header() {
               <li><a href="vision" className="font-bold">Visión</a></li>
           </ul>
           <ul class="flex space-x-3">
+              <li><a href="https://maratonmedellin.com/" target="_blank" className="font-bold">¿Quieres Correr?</a></li>
               <li><a href="https://maratonmedellin.com/" target="_blank" className="text-xl"><FaRunning /></a></li>
+              <li><a href="https://encicla.metropol.gov.co/" target="_blank" className="font-bold">ENCICLA</a></li>
               <li><a href="https://encicla.metropol.gov.co/" target="_blank" className="text-xl"><IoBicycleOutline /></a></li>
           </ul>
       </nav>
