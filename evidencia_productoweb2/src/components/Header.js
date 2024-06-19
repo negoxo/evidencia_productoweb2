@@ -13,10 +13,10 @@ function Header() {
       <div className="bg-logo-image bg-no-repeat w-90 h-64 mt-6 bg-center"  ></div>
       <nav className="bg-black bg-opacity-70 text-white flex justify-between items-center px-5 py-3 w-full z-10">
           <ul className="flex space-x-4">
-              <li><a href="index.html" className="font-bold">Home</a></li>
-              <li><a href="quienessomos.html" className="font-bold">¿Quiénes Somos?</a></li>
-              <li><a href="mision.html" className="font-bold">Misión</a></li>
-              <li><a href="vision.html" className="font-bold">Visión</a></li>
+              <li><a href="/" className="font-bold">Home</a></li>
+              <li><a href="quienessomos" className="font-bold">¿Quiénes Somos?</a></li>
+              <li><a href="mision" className="font-bold">Misión</a></li>
+              <li><a href="vision" className="font-bold">Visión</a></li>
           </ul>
           <ul class="flex space-x-3">
               <li><a href="https://maratonmedellin.com/" target="_blank" className="text-xl"><FaRunning /></a></li>

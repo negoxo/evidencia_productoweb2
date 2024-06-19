@@ -1,13 +1,15 @@
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import '../App.css';
-
-
-
 
 function Home() {
   const [weather, setWeather] = useState(null);
   const [city, setCity] = useState('Medellin');
+  const [origin, setOrigin] = useState('');
+  const [destination, setDestination] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -29,6 +31,10 @@ function Home() {
     setCity(event.target.value);
   };
 
+  const handleRouteCalculation = () => {
+    navigate('/routeresult', { state: { origin, destination } });
+  };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <h1 className="text-4xl font-bold mb-8">VAMOS EN BICI</h1>
@@ -38,12 +44,18 @@ function Home() {
           <input 
             className="border border-gray-300 rounded-md p-2 mb-4 w-full" 
             placeholder="Origen" 
+            value={origin}
+            onChange={(e) => setOrigin(e.target.value)}
           />
           <input 
             className="border border-gray-300 rounded-md p-2 mb-4 w-full" 
             placeholder="Destino" 
+            value={destination}
+            onChange={(e) => setDestination(e.target.value)}
           />
-          <button className="bg-blue-500 text-white rounded-md p-2 w-full">Calcula tu ruta</button>
+          <button className="bg-blue-500 text-white rounded-md p-2 w-full" onClick={handleRouteCalculation}>
+            Calcula tu ruta
+          </button>
         </section>
         <section className="bg-white p-6 rounded-lg shadow-lg">
           <h2 className="text-2xl font-semibold mb-4">Clima Municipios del valle de aburra</h2>
